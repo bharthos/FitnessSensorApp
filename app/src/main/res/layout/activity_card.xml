@@ -21,7 +21,18 @@
             android:id="@+id/BMIImage"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:scaleType="fitCenter"
             app:srcCompat="@drawable/home1" />
+
+        <TextView
+            android:id="@+id/BMIName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="28dp"
+            android:layout_marginTop="3dp"
+            android:text="BMI Calculator"
+            android:textStyle="bold"
+            android:visibility="visible" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -32,13 +43,23 @@
         android:layout_marginEnd="32dp"
         app:cardCornerRadius="20dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/ActTrack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/activity_track" />
+
+        <TextView
+            android:id="@+id/TactTrack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="3dp"
+            android:text="Activity Tracker"
+            android:textStyle="bold"
+            android:visibility="visible" />
     </androidx.cardview.widget.CardView>
 
     <androidx.cardview.widget.CardView
@@ -51,7 +72,17 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView2"
-        app:layout_constraintVertical_bias="0.947" >
+        app:layout_constraintVertical_bias="0.947">
+
+        <TextView
+            android:id="@+id/Tpers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="26dp"
+            android:layout_marginTop="3dp"
+            android:text="Personal Coach"
+            android:textStyle="bold"
+            android:visibility="visible" />
 
         <ImageView
             android:id="@+id/perstrain"
@@ -69,13 +100,23 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView3"
-        app:layout_constraintVertical_bias="0.947" >
+        app:layout_constraintVertical_bias="0.947">
 
         <ImageView
             android:id="@+id/yoga"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@drawable/yoga" />
+
+        <TextView
+            android:id="@+id/TYoga"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="60dp"
+            android:layout_marginTop="3dp"
+            android:text="Yoga"
+            android:textStyle="bold"
+            android:visibility="visible" />
     </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
