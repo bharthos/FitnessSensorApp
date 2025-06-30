@@ -7,6 +7,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/bmi_background"
     tools:context=".BMIActivity">
 
     <EditText
@@ -14,14 +15,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
-        android:hint="Enter Height in CM"/>
+        android:hint="Enter Height in CM"
+        android:minHeight="48dp"
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/editWeight"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="32dp"
-        android:hint="Enter Weight in KGS"/>
+        android:hint="Enter Weight in KGS"
+        android:minHeight="48dp" />
 
     <Button
         android:id="@+id/btnBMI"
@@ -32,12 +36,11 @@
 
     <TextView
         android:id="@+id/BMIres"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
         android:layout_gravity="center"
         android:textStyle="bold"
-        android:textSize="25dp"
+        android:textSize="20dp"
         android:layout_margin="32dp"
-        android:text="TextView" />
+        android:text="Your Calculated BMI is:"/>
 </LinearLayout>
