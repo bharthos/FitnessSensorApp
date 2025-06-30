@@ -1,5 +1,6 @@
 package com.example.fitnesssensorapp
 
+import android.graphics.Color
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
@@ -26,12 +27,42 @@ class BMIActivity : AppCompatActivity() {
         val bmicalc = findViewById<Button>(R.id.btnBMI)
         val resbmi = findViewById<TextView>(R.id.BMIres)
 
-        bmicalc.setOnClickListener{
-            val h = (height.text.toString()).toFloat()/100
-            val w = (weight.text.toString()).toFloat()
+        bmicalc.setOnClickListener {
+            val h = height.text.toString().toFloatOrNull()?.div(100) // convert cm to m
+            val w = weight.text.toString().toFloatOrNull()
 
-            val r = w/(h*h)
-            resbmi.text = "Your Calculated BMI is $r"
+            if (h != null && w != null && h > 0) {
+                val r = w / (h * h)
+                val category: String
+                val color: Int
+
+                when {
+                    r < 18.5 -> {
+                        category = "Underweight: BMI is less than 18.5"
+                        color = Color.parseColor("#03A9F4") // blue
+                    }
+                    r < 25 -> {
+                        category = "Normal weight: BMI is 18.5 to 24.9"
+                        color = Color.parseColor("#4CAF50") // green
+                    }
+                    r < 30 -> {
+                        category = "Overweight: BMI is 25 to 29.9"
+                        color = Color.parseColor("#FFC107") // yellow
+                    }
+                    else -> {
+                        category = "Obesity: BMI is 30 or more"
+                        color = Color.parseColor("#F44336") // red
+                    }
+                }
+
+                resbmi.text = "Your Calculated BMI is: %.1f\n$category".format(r)
+                resbmi.setTextColor(color)
+
+            } else {
+                resbmi.text = "Please enter valid height and weight"
+                resbmi.setTextColor(Color.GRAY)
+            }
         }
+
     }
 }
